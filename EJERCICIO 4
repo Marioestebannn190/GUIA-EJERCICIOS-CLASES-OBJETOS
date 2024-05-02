@@ -1,0 +1,14 @@
+class Tablas:
+    def __init__(self, numero):
+        self.numero = numero
+
+    def multiplicar(self):
+        for i in range(1, self.numero + 1):
+            print(f"{self.numero} x {i} = {self.numero * i}")
+
+# Crear un objeto de la clase Tablas
+numero = int(input("Ingrese el número hasta el cual desea la tabla de multiplicar: "))
+tablas = Tablas(numero)
+
+# Llamar al método multiplicar para imprimir la tabla de multiplicar
+tablas.multiplicar()
