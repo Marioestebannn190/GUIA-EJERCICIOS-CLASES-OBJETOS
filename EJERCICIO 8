@@ -1,0 +1,50 @@
+class Persona:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+class Cuenta:
+    def __init__(self, titular, cantidad=0):
+        self._titular = titular
+        self._cantidad = cantidad
+
+    @property
+    def titular(self):
+        return self._titular
+
+    @titular.setter
+    def titular(self, titular):
+        self._titular = titular
+
+    @property
+    def cantidad(self):
+        return self._cantidad
+
+    @cantidad.setter
+    def cantidad(self, cantidad):
+        if cantidad >= 0:
+            self._cantidad = cantidad
+
+    def ingresar(self, cantidad):
+        if cantidad >= 0:
+            self._cantidad += cantidad
+
+    def retirar(self, cantidad):
+        if cantidad <= self._cantidad:
+            self._cantidad -= cantidad
+
+    def mostrar(self):
+        print(f"Titular: {self._titular}, Cantidad: ${self._cantidad:.2f}")
+
+# Crear objetos de la clase Cuenta
+cuenta1 = Cuenta(Persona("Juan"), 1000)
+cuenta2 = Cuenta(Persona("Ana"))
+
+# Utilizar métodos
+cuenta1.ingresar(500)
+cuenta1.retirar(200)
+cuenta2.ingresar(300)
+cuenta2.retirar(150)
+
+# Mostrar información
+cuenta1.mostrar()
+cuenta2.mostrar()
