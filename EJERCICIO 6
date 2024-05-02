@@ -1,0 +1,16 @@
+class Animal:
+    def __init__(self, nombre, edad, tipo):
+        self.nombre = nombre
+        self.edad = edad
+        self.tipo = tipo
+
+    def mostrar_informacion(self):
+        print(f"Nombre: {self.nombre}, Edad: {self.edad}, Tipo: {self.tipo}")
+
+# Crear dos objetos de la clase Animal
+animal1 = Animal("Perro", 5, "Mamífero")
+animal2 = Animal("Pez", 3, "Pez")
+
+# Utilizar el método mostrar_informacion para mostrar la información de cada animal
+animal1.mostrar_informacion()
+animal2.mostrar_informacion()
