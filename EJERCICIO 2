@@ -1,0 +1,25 @@
+from datetime import datetime, timedelta
+
+class Libro:
+    # Constructor de la clase
+    def __init__(self, codigo, nombre, ano, fecha_prestamo):
+        self.codigo = codigo
+        self.nombre = nombre
+        self.ano = ano
+        self.fecha_prestamo = fecha_prestamo
+
+    # Método para calcular la fecha de devolución
+    def calcular_fecha_devolucion(self):
+        # Convertir la fecha de préstamo a un objeto datetime
+        fecha_prestamo_obj = datetime.strptime(self.fecha_prestamo, "%Y-%m-%d")
+        # Calcular la fecha de devolución sumando 30 días al día actual
+        fecha_devolucion = fecha_prestamo_obj + timedelta(days=30)
+        return fecha_devolucion.strftime("%Y-%m-%d")
+
+# Crear dos objetos de la clase Libro
+libro1 = Libro("12345", "El Principito", 1946, "2024-04-01")
+libro2 = Libro("67890", "1984", 1949, "2024-05-15")
+
+# Utilizar el método calcular_fecha_devolucion para visualizar las fechas de devolución
+print(f"Fecha de devolución del libro 1: {libro1.calcular_fecha_devolucion()}")
+print(f"Fecha de devolución del libro 2: {libro2.calcular_fecha_devolucion()}")
