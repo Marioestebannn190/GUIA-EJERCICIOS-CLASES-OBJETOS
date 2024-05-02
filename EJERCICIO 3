@@ -1,0 +1,36 @@
+class Calculadora:
+    def __init__(self, numeros):
+        self.numeros = numeros
+
+    def sumar(self):
+        return sum(self.numeros)
+
+    def multiplicar(self):
+        producto = 1
+        for numero in self.numeros:
+            producto *= numero
+        return producto
+
+    def dividir(self):
+        if len(self.numeros) > 1:
+            divisor = self.numeros[0]
+            resultado = 0
+            for numero in self.numeros[1:]:
+                resultado += numero / divisor
+            return resultado
+        else:
+            print("No hay suficientes números para dividir.")
+            return None
+
+    def promedio(self):
+        return sum(self.numeros) / len(self.numeros)
+
+# Ejemplo de uso
+numeros = [1, 2, 3, 4, 5]  # Lista de números a operar
+calculadora = Calculadora(numeros)
+
+# Mostrar resultados de las operaciones
+print(f"Suma: {calculadora.sumar()}")
+print(f"Producto: {calculadora.multiplicar()}")
+print(f"División: {calculadora.dividir()}")
+print(f"Promedio: {calculadora.promedio()}")
