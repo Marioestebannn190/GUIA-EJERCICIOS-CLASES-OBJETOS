@@ -1,0 +1,14 @@
+class Calculadora:
+    def __init__(self, valor1, valor2):
+        self.valor1, self.valor2 = valor1, valor2
+
+    def suma(self): return self.valor1 + self.valor2
+    def resta(self): return self.valor1 - self.valor2
+    def multiplicacion(self): return self.valor1 * self.valor2
+    def division(self): return self.valor1 / self.valor2 if self.valor2!= 0 else "Error: División por cero"
+
+# Solicitar valores y crear objeto en una sola línea
+calculadora = Calculadora(int(input("Valor 1: ")), int(input("Valor 2: ")))
+
+# Imprimir resultados
+print(f"Suma: {calculadora.suma()}\nResta: {calculadora.resta()}\nMultiplicación: {calculadora.multiplicacion()}\nDivisión: {calculadora.division()}")
