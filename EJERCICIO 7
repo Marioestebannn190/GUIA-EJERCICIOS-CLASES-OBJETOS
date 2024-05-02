@@ -1,0 +1,23 @@
+class Empresa:
+    def __init__(self):
+        self.empleados = []
+
+    def agregar_empleado(self, nombre, dias_trabajados):
+        self.empleados.append({"nombre": nombre, "dias_trabajados": dias_trabajados, "salario": dias_trabajados * 40000})
+
+    def calcular_nominas(self):
+        return sum([empleado["salario"] for empleado in self.empleados])
+
+    def mostrar_empleados(self):
+        for empleado in self.empleados:
+            print(f"Nombre: {empleado['nombre']}, Días trabajados: {empleado['dias_trabajados']}, Salario: ${empleado['salario']}")
+
+# Crear y agregar empleados a la empresa
+empresa = Empresa()
+empresa.agregar_empleado("Juan", 20)
+empresa.agregar_empleado("Ana", 25)
+
+# Mostrar la información de los empleados y la nómina total
+print("\nInformación de la Empresa:")
+empresa.mostrar_empleados()
+print(f"Nómina Total: ${empresa.calcular_nominas()}")
