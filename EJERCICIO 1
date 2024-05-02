@@ -1,0 +1,23 @@
+class Vehiculo:
+    # Constructor de la clase
+    def __init__(self, marca, modelo, color):
+        self.marca = marca
+        self.modelo = modelo
+        self.color = color
+        self.precio = None
+
+    # Método para definir el precio del vehículo
+    def definir_precio(self, precio):
+        self.precio = precio
+
+# Crear dos objetos de la clase Vehiculo
+vehiculo1 = Vehiculo("mercedes", "AMG", "negro")
+vehiculo2 = Vehiculo("mazda", "cx", "rojo")
+
+# Utilizar el método definir_precio para establecer el precio de cada vehículo
+vehiculo1.definir_precio(20000)
+vehiculo2.definir_precio(25000)
+
+# Imprimir los detalles de los vehículos
+print(f"Vehículo 1: {vehiculo1.marca} {vehiculo1.modelo}, Color: {vehiculo1.color}, Precio: {vehiculo1.precio}")
+print(f"Vehículo 2: {vehiculo2.marca} {vehiculo2.modelo}, Color: {vehiculo2.color}, Precio: {vehiculo2.precio}")
