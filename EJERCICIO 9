@@ -1,0 +1,29 @@
+class Estudiante:
+    def __init__(self, nombre, nota):
+        self.nombre = nombre
+        self.nota = nota
+
+    def imprimir_informacion(self):
+        print(f"Nombre: {self.nombre}, Nota: {self.nota}")
+
+    def resultado_nota(self):
+        if self.nota >= 5:
+            print(f"{self.nombre} ha aprobado con nota {self.nota}.")
+        else:
+            print(f"{self.nombre} ha reprobado con nota {self.nota}.")
+
+    def promedio(self):
+        return self.nota
+
+# Crear objetos de la clase Estudiante
+estudiante1 = Estudiante("Juan", 7)
+estudiante2 = Estudiante("Ana", 4)
+
+# Utilizar métodos
+estudiante1.imprimir_informacion()
+estudiante1.resultado_nota()
+print(f"Promedio de {estudiante1.nombre}: {estudiante1.promedio()}")
+
+estudiante2.imprimir_informacion()
+estudiante2.resultado_nota()
+print(f"Promedio de {estudiante2.nombre}: {estudiante2.promedio()}")
